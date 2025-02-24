@@ -5,41 +5,43 @@
 <head> <!-- HTML의 meta 정보를 포함한다. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>제목</title> <!-- HTML 페이지의 제목, 브라우저 상단의 웹 페이지 탭에 제목으로 노출된다. -->
-</head>
-
-<body>
+    <title> 제목 </title> <!-- HTML 페이지의 제목, 브라우저 상단의 웹 페이지 탭에 제목으로 노출된다. -->
     <style>
-        #status_Bar {
+        .status_Bar { /* 상태 표시줄 */
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-
         }
 
-        #high_bar {
+        .high_bar { /* 상단바 */
             
         }
 
-        #profile {
+        .pro_file { /* 프로필 영역 */
+            border: solid;
+            border-color: white;
+        }
+
+        .intro_letter { /* 소개글 */
+            border: solid;
 
         }
 
-        #intro_letter {
-
+        .icon { /* 아이콘 */
+            
         }
 
-        #icon {
-
+        .high_light { /* 하이라이트 */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            
         }
 
-        #highlight {
-
-        }
-
-        #thumbnail {
-
+        .thumb_nail { /* 게시물 썸네일 */
+            width: 100%;
         }
     </style>
+</head>
+<body>
     <!-- HTML 문서에서 실질적으로 보이는 영역을 정의하는 구간 - 이미지, 글, 링크, 테이블, 동영상 등등 -->
     <!-- 코드 작성시 엔터를 눌러 줄바꿈을 시도했음에도 불구하고 실행 화면에는 한줄로 연결된 채 나온다. -->
 
@@ -54,14 +56,15 @@
     <!-- <img src = "url"> - 이미지를 불러와 문서에서 보여주는 태그 -->
 
     <!-- 상단바 -->
-    <div id = "high_bar">
+    <div class = "high_bar"> 
         <img src = "../image/instagramlogo.png" width = "150px">
-        <input value = "검색"> <button style="width: 30px; height: 20px; font-size: 7px;">확인</button>
+        <input value = "검색">
+        <button style = "width: 30px; height: 20px; font-size: 7px;">확인</button>
     </div>
     <!-- 상단바 끝 -->
 
     <!-- 프로필 영역 -->
-    <div>
+    <div class = "pro_file">
         <img src = "../image/profile.jpg" width = "50px">
         <div>
             <h2> half_bottle </h2>
@@ -85,30 +88,20 @@
     <!-- 소개글 끝 -->
 
     <!-- 하이라이트 -->
-    <div style = "display: grid; grid-template-columns: 1fr 1fr 1fr;">
+    <div class = "high_light">
         <div>
-            <div>
-                <img src="../image/h1.jpg" height="35px">
-            </div>
-            <div>
-                😘
-            </div>
+            <img src="../image/h1.jpg" height="35px"> <br> 😘
         </div>
-
         <div>
-            <div>
-                <img src="../image/h2.jpg" height="35px">
-            </div>
-            <div>
-                😎
-            </div>
+            <img src="../image/h2.jpg" height="35px"> <br> 😎
         </div>
     </div>
+
     <br>
     <!-- 하이라이트 끝 -->
 
     <!-- 상태표시줄 -->
-    <div id = "status_Bar">
+    <div class = "status_Bar">
         <div>
             게시물 <br> 133
         </div>
@@ -123,7 +116,7 @@
     <!-- 상태표시줄 끝 -->
 
     <!-- 아이콘 -->
-    <div id = "icon">
+    <div class = "icon">
         <!-- 
             부모 너비의 32%값이 지정된다. 
             퍼센트로 지정된 값은 화면 크기에 따라 유동적으로 바뀐다.
@@ -143,7 +136,7 @@
     <!-- 아이콘 끝 -->
 
     <!-- 게시물 썸네일 -->
-    <div>
+    <div class = "thumb_nail">
 
     </div>
     <!-- 게시물 썸네일 끝 -->
