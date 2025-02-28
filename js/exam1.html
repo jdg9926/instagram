@@ -14,10 +14,10 @@
             let box = 4;
 
             let box_num  = ball / box;
-            let box_num2  = ball % box ;
 
-            let div = ball % box == 0 ? ball / box : Math.ceil(box_num);
-            document.write(ball, " :: " ,box, " :: ", box_num, " :: " ,div , "<br>");
+            let div = Number.isInteger(box_num) ? ball / box : parseInt(box_num + 1);
+
+            document.write(ball, " :: ", box, " :: ", box_num, " :: ", div, "<br>");
             
             /*
                 사각형의 면적과 둘레 계산하기
