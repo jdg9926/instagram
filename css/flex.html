@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            
+            /* flex로 사용하고 싶으면 display 속성에 준다 */
+            .container { /* em = 상대적으로 길이가 늘어남 (반응형에서 많이 쓰임) */
+                display: flex;
+                margin: 1em 0;
+                border : 3px dotted black;
+                padding: 0.5em;
+            }
+            .box {
+                background-color: blue;
+                color: white;
+                padding: 1em;
+                font-size: 2em;
+                border: 3px solid white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "box">ITEM1</div>
+            <div class = "box">ITEM1</div>
+            <div class = "box">ITEM1</div>
+        </div>
+    </body>
+</html>

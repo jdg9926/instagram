@@ -1,147 +1,126 @@
 <!-- 주석(comment) : 브라우저에서 출력이 되지 않는 설명 문장 코드에 대한 설명을 할 때 사용한다. 영역 안에 있으면 전부 주석으로 간주한다. -->
 <!DOCTYPE html> <!-- HTML5 문서임을 선언, 대소문자 구분 없이 정의 가능하다. -->
 <html lang = "ko"> <!-- 루트 요소 -->
+    <head> <!-- HTML의 meta 정보를 포함한다. -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> 제목 </title> <!-- HTML 페이지의 제목, 브라우저 상단의 웹 페이지 탭에 제목으로 노출된다. -->
+        <link rel = "stylesheet" href = "style.css">
+        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        
+        <!-- <style>
+            @import url(style.css);
+        </style> -->
+    </head>
+    <body>
+        <!-- HTML 문서에서 실질적으로 보이는 영역을 정의하는 구간 - 이미지, 글, 링크, 테이블, 동영상 등등 -->
+        <!-- 코드 작성시 엔터를 눌러 줄바꿈을 시도했음에도 불구하고 실행 화면에는 한줄로 연결된 채 나온다. -->
 
-<head> <!-- HTML의 meta 정보를 포함한다. -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 제목 </title> <!-- HTML 페이지의 제목, 브라우저 상단의 웹 페이지 탭에 제목으로 노출된다. -->
-    <style>
-        .status_Bar { /* 상태 표시줄 */
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
+        <!-- HTML 용어 및 정의 -->
+        <!-- <br> - 줄바꿈 담당 태그 -->
+        <!-- <p> ... </p> - 단락을 정의하는 태그 * block 속성을 가지고 있다. -->
+        <!-- <h1> ... </h1> - 제목, 부제목, 소제목을 작성할 때 사용하는 태그 <h6> 까지 있다. -->
+        <!-- <strong> ... </strong> - 글씨를 두껍게 만들어 강조하는 역할 -->
+        <!-- <b> ... </b> - 글씨를 두껍게 만드는 역할 -->
+        <!-- <button> ... </button> - 버튼을 만드는 태그 -->
+        <!-- <a href = "url"> ... </a> - 다른 페이지로 이동할 수 있는 태그 -->
+        <!-- <img src = "url"> - 이미지를 불러와 문서에서 보여주는 태그 -->
 
-        .high_bar { /* 상단바 */
-            
-        }
-
-        .pro_file { /* 프로필 영역 */
-            border: solid;
-            border-color: white;
-        }
-
-        .intro_letter { /* 소개글 */
-            border: solid;
-
-        }
-
-        .icon { /* 아이콘 */
-            
-        }
-
-        .high_light { /* 하이라이트 */
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            
-        }
-
-        .thumb_nail { /* 게시물 썸네일 */
-            width: 100%;
-        }
-    </style>
-</head>
-<body>
-    <!-- HTML 문서에서 실질적으로 보이는 영역을 정의하는 구간 - 이미지, 글, 링크, 테이블, 동영상 등등 -->
-    <!-- 코드 작성시 엔터를 눌러 줄바꿈을 시도했음에도 불구하고 실행 화면에는 한줄로 연결된 채 나온다. -->
-
-    <!-- HTML 용어 및 정의 -->
-    <!-- <br> - 줄바꿈 담당 태그 -->
-    <!-- <p> ... </p> - 단락을 정의하는 태그 * block 속성을 가지고 있다. -->
-    <!-- <h1> ... </h1> - 제목, 부제목, 소제목을 작성할 때 사용하는 태그 <h6> 까지 있다. -->
-    <!-- <strong> ... </strong> - 글씨를 두껍게 만들어 강조하는 역할 -->
-    <!-- <b> ... </b> - 글씨를 두껍게 만드는 역할 -->
-    <!-- <button> ... </button> - 버튼을 만드는 태그 -->
-    <!-- <a href = "url"> ... </a> - 다른 페이지로 이동할 수 있는 태그 -->
-    <!-- <img src = "url"> - 이미지를 불러와 문서에서 보여주는 태그 -->
-
-    <!-- 상단바 -->
-    <div class = "high_bar"> 
-        <img src = "image/instagramlogo.png" width = "150px">
-        <input value = "검색">
-        <button style = "width: 30px; height: 20px; font-size: 7px;">확인</button>
-    </div>
-    <!-- 상단바 끝 -->
-
-    <!-- 프로필 영역 -->
-    <div class = "pro_file">
-        <img src = "image/profile.jpg" width = "50px">
-        <div>
-            <h2> half_bottle </h2>
-            <button> 프로필편집 </button>
+        <!-- 상단바 -->
+        <div id = "high_bar"> 
+            <img src = "image/instagramlogo.png" width="150px">
+            <input type = "search" value = "검색">
+            <div>
+                <i class = "fa-solid fa-house"></i>
+                <i class = "fa-solid fa-paper-plane"></i>
+                <i class = "fa-solid fa-compass"></i>
+                <i class = "fa-solid fa-heart"></i>
+            </div>
         </div>
-    </div>
-    <!-- 프로필 영역 끝 -->
-
-    <!-- 소개글 -->
-    <div>
-        <p>
-            <strong>
-                반병현(Bynghyun Ban) <br>
-            </strong>
-            작가
-        </p>
-        <p>
-            <a href = "https://needleworm.github.io "> needleworm.github.io </a>
-        </p>
-    </div>
-    <!-- 소개글 끝 -->
-
-    <!-- 하이라이트 -->
-    <div class = "high_light">
-        <div>
-            <img src="image/h1.jpg" height="35px"> <br> 😘
+        <!-- 프로필 영역 -->
+        
+        <div id = "profile">
+            <div id = "profile_pic">
+                <img src = "image/profile.jpg" class = "circle_pic">
+            </div>
+            <div id = "profile_info">
+                <div id = "id"> half_bottle<i class="fa-solid fa-gear"></i></div>
+                <button> 프로필 편집 </button>
+            </div>
         </div>
+
+        <!-- 소개글 -->
         <div>
-            <img src="image/h2.jpg" height="35px"> <br> 😎
+            <p>
+                <strong>
+                    반병현(Bynghyun Ban) <br>
+                </strong>
+                작가
+            </p>
+            <p>
+                <a href = "https://needleworm.github.io "> needleworm.github.io </a>
+            </p>
         </div>
-    </div>
-
-    <br>
-    <!-- 하이라이트 끝 -->
-
-    <!-- 상태표시줄 -->
-    <div class = "status_Bar">
-        <div>
-            게시물 <br> 133
+        <!-- 하이라이트 -->
+        <div class = "high_light">
+            <div class = "high_light_sub">
+                <div class = "highlight_pic">
+                    <img src="image/h1.jpg" class = "circle_pic">
+                </div>
+                <div>
+                    😘
+                </div>
+            </div>
+            <div class = "high_light_sub">
+                <div class = "highlight_pic">
+                    <img src="image/h2.jpg" class = "circle_pic">
+                </div>
+                <div>
+                    😎
+                </div>
+            </div>
         </div>
-        <div>
-            팔로워 <br> 408
+        <!-- 상태표시줄 -->
+        <div id = "status_Bar">
+            <div class = "stat">
+                게시물 <br> 133
+            </div>
+            <div class = "stat">
+                팔로워 <br> 408
+            </div>
+            <div class = "stat">
+                팔로우 <br> 189
+            </div>
         </div>
-        <div>
-            팔로우 <br> 189
+        <!-- 아이콘 -->
+        <div id = "main_icon">
+            <div class = "selected">
+                <i class="fa-solid fa-border-all"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-film"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-circle-play"></i>
+            </div>
+            <div>    
+                <i class="fa-solid fa-bookmark"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-user-tag"></i>
+            </div>
         </div>
-    </div>
-    <br>
-    <!-- 상태표시줄 끝 -->
-
-    <!-- 아이콘 -->
-    <div class = "icon">
-        <!-- 
-            부모 너비의 32%값이 지정된다. 
-            퍼센트로 지정된 값은 화면 크기에 따라 유동적으로 바뀐다.
-            창 크기의 변화에 맞춰 그때그때 화면의 정보나 크기가 함께
-            바뀌는 웹 페이지를 반응형 웹이라고 한다.
-        -->
-        <img src = "image/1.jpg" width = "32%">
-        <img src = "image/2.jpg" width = "32%">
-        <img src = "image/3.jpg" width = "32%">
-        <img src = "image/4.jpg" width = "32%">
-        <img src = "image/5.jpg" width = "32%">
-        <img src = "image/6.jpg" width = "32%">
-        <img src = "image/7.jpg" width = "32%">
-        <img src = "image/8.jpg" width = "32%">
-        <img src = "image/9.jpg" width = "32%">
-    </div>
-    <!-- 아이콘 끝 -->
-
-    <!-- 게시물 썸네일 -->
-    <div class = "thumb_nail">
-
-    </div>
-    <!-- 게시물 썸네일 끝 -->
-
-
-</body>
-
+        <!-- 게시물 썸네일 -->
+            <div id = "thumb_nail_grid">
+                <img src = "image/2.jpg" class = "thumb_nail">
+                <img src = "image/1.jpg" class = "thumb_nail">
+                <img src = "image/3.jpg" class = "thumb_nail">
+                <img src = "image/4.jpg" class = "thumb_nail">
+                <img src = "image/5.jpg" class = "thumb_nail">
+                <img src = "image/6.jpg" class = "thumb_nail">
+                <img src = "image/7.jpg" class = "thumb_nail">
+                <img src = "image/8.jpg" class = "thumb_nail">
+                <img src = "image/9.jpg" class = "thumb_nail">
+            </div>
+    </body>
 </html>

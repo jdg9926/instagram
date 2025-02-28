@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            section {
+                display: flex;
+                height: 100px;
+            }
+            div {
+                width: 50px;
+                
+                /* height: 50px; */
+                /* margin: 10px; */
+                color: white;
+                text-align: center;
+            }
+
+            .a {
+                background-color: red;
+            }
+            .b {
+                background-color: yellow;
+            }
+            .c {
+                background-color: blue;
+            }
+            .d {
+                background-color: green;
+            }
+            .e {
+                background-color: violet;
+            }
+            .flex-start {
+                justify-content: flex-start;
+            }
+            .flex-center {
+                justify-content: center;
+            }
+            .flex-end {
+                justify-content: end;
+            }
+            .flex-between {
+                justify-content: space-between;
+            }
+            .flex-around {
+                justify-content: space-around;   
+            }
+            .flex-test {
+                border: 1px solid;
+                align-items : center;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h1>justify-content 와 align-items</h1>
+        <hr>
+        <p>flex-start</p>
+        <section class = "flex-start">
+            <div class = "a">a</div>
+            <div class = "b">b</div>
+            <div class = "c">c</div>
+            <div class = "d">d</div>
+            <div class = "e">e</div>
+        </section>
+        <p>space-between</p>
+        <section class = "flex-between">
+            <div class = "a">a</div>
+            <div class = "b">b</div>
+            <div class = "c">c</div>
+            <div class = "d">d</div>
+            <div class = "e">e</div>
+        </section>
+        <p>flex-center</p>
+        <section class = "flex-center">
+            <div class = "a">a</div>
+            <div class = "b">b</div>
+            <div class = "c">c</div>
+            <div class = "d">d</div>
+            <div class = "e">e</div>
+        </section>
+        <p>space-around</p>
+        <section class = "flex-around">
+            <div class = "a">a</div>
+            <div class = "b">b</div>
+            <div class = "c">c</div>
+            <div class = "d">d</div>
+            <div class = "e">e</div>
+        </section>
+        <p>flex-end</p>
+        <section class = "flex-end">
+            <div class = "a">a</div>
+            <div class = "b">b</div>
+            <div class = "c">c</div>
+            <div class = "d">d</div>
+            <div class = "e">e</div>
+        </section>
+
+        <p>flex-test</p>
+        <section class = "flex-test">
+            <div class = "a">a</div>
+            <div class = "b">b</div>
+            <div class = "c">c</div>
+            <div class = "d">d</div>
+            <div class = "e">e</div>
+        </section><br><br><br>
+    </body>
+</html>

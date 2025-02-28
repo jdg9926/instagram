@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /*
+                연산자 Operator
+                 연산자 : 기능이 있는 기호
+                 피연산자 : 연산을 당하는 쪽
+            */
+            // 산술 연산자
+            let num1 = 10;
+            let num2 = 7;
+
+            document.write("num1 + num2 = " + (num1 + num2) + "<br>");
+            document.write("num1 - num2 = " + (num1 - num2) + "<br>");
+            document.write("num1 * num2 = " + (num1 * num2) + "<br>");
+            document.write("num1 / num2 = " + (num1 / num2) + "<br>");
+            document.write("num1 % num2 = " + (num1 % num2) + "<br>");
+
+            document.write("num1 : ", num1, "<br>");
+            document.write("num2 : ", num2, "<br>");
+            /* 문자 결합 연산자
+                여러개의 문자를 하나의 문자형 데이터로 결합할 때 사용
+                더하기에 피연산자로 문자형 데이터가 한 개라도 포함되어 있으면
+                다른 피연산자의 데이터는 자동으로 문자형 데이터로 변환되고
+                문자 결합이 이루어져 하나의 문자형 데이터가 된다. 
+            */
+            document.write("<hr>");
+            document.write("Text1 ", "Text2 <br>");
+            document.write("100"+200,"<br>");
+            document.write(100+"200","<br>");
+
+            let str = "<table border = '1'>";
+                str += "<tr>";
+                str += "<td>1</td><td>2</td><td>3</td>";
+                str += "</tr>";
+                str += "</table>";
+                document.write(str);
+            
+            
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

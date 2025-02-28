@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #f2f2f2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .signup-container {
+                background-color: #fff;
+                padding: 40px;
+                border-radius: 8px;
+                width: 350px;
+            }
+            .signup-container h2 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .signup-container form {
+                display: flex;
+                flex-direction: column;
+                
+            }
+            .signup-container label {
+                margin-bottom: 5px;
+                font-weight: bold;   
+                
+            }
+            .signup-container input[type = "text"],
+            .signup-container input[type = "password"],
+            .signup-container input[type = "email"] {
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 14px;
+                box-sizing: border-box;
+                
+            }
+            .signup-container input:focus {
+                outline: none;
+                border-color: #3f29ef;
+            }
+            .name-group {
+                display: flex;
+                align-items: flex-start;
+                gap : 10px;
+                border: 1px solid;
+                
+                margin-bottom: 15px;
+            }
+            .name-group input {
+                flex-grow: 1;
+            }
+            .name-group button {
+                padding: 8px 15px;
+                background-color: #3f29ef;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                font-size: 14px;
+                cursor: pointer;
+                
+                
+            }
+            .name-group button:hover {
+                background-color: #2e1cb3;
+            }
+            .email-group {
+                display: flex;
+                align-items: flex-start;
+                gap: 5px;
+                margin-bottom: 15px;
+            }
+            .email-group input,
+            .email-group select {
+                height: 38px;
+                flex-grow: 1;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 14px;
+            }
+            .email-group span {
+                font-size: 16px;
+                position: relative;
+                top : 7px;
+            }
+            .signup-container button.signup-btn {
+                padding: 10px;
+                color: white;
+                border: none;
+                border-radius: 4px;
+                background-color: #3f29ef;
+                font-size: 16px;
+                cursor: pointer;
+                margin-bottom: 10px;
+            }
+            div {
+                border: 1px solid;
+                /* align-items : stretch; */
+            }
+
+            div input {
+                align-content : stretch;
+            }
+            .signin-link {
+                margin-top: 10px;
+                text-align: center;
+                font-size: 14px;
+            }
+            .signin-link a {
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "signup-container">
+            <h2>회원가입</h2>
+            <form>
+                <label>이름</label>
+                <div class = "name-group">
+                <input type = "text" id = "name" placeholder = "이름 입력">
+                </div>
+                <label for = "username">아이디</label>
+                <div>
+                    
+                    <input type = "text" id = "username" placeholder="아이디 입력">
+                    <button type = "button">중복체크</button>
+                </div>
+
+                <label for = "password">비민번호</label>
+                <div>
+                    <input type = "password" id ="password" placeholder="비밀번호 입력">
+                </div>
+                <label for = "confirm-password">비밀번호 확인</label>
+                <div>
+                    <input type = "password" id = "confirm-password" placeholder="비밀번호 입력">
+                </div>
+                <label for = "email">이메일</label>
+                <div>
+                    <input type = "text" id = "email" placeholder="아이디">
+                    <span>@</span>
+                    <select id = "email-domain">
+                        <option selected>naver.com</option>
+                        <option>gmail.com</option>
+                        <option>duam.com</option>
+                        <option>직접 입력</option>
+                    </select>
+                </div>
+
+                <button class = "signup-btn">회원가입</button>
+            </form>
+            <div class = "signin-link">
+                이미 계정이 있으신가요? <a href = "login.html">로그인</a>
+            </div>
+        </div>
+    </body>
+</html>

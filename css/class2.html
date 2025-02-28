@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        li {
+            list-style-type : none;
+
+        }
+        li:first-child {
+            color : red;
+        }
+        li:last-child {
+            color : blue;
+        }
+        li:nth-child(odd) { /* odd - 홀수에 해당하는것만 적용 */
+            color : red;
+        }
+        li:nth-child(even) { /* even - 짝수에 해당하는것만 적용 */
+            color : blue;
+        }
+        li:nth-child(4n) { /* n* - n*에 해당하는 배수만 적용 */
+            color : green;   
+        }
+        li:nth-child(6) { /* n번째에만 적용 */
+            color : tan;
+        }
+        li > a {
+            text-decoration: none;
+            color : gray;
+            
+            
+        }
+        a:hover {
+            color: orange;
+            text-decoration-line: line-through;
+            
+        }
+
+        a:active {
+            color:red;
+        }
+
+    
+
+    </style>
+    <body>
+        <!-- 
+            가상 클래스 
+            HTML 요소의 특정 상태나 조건에 따라 
+            스타일을 적용할 수 있도록 해주는 CSS 선택자이다.
+        -->
+        <ul>
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+        </ul>
+
+        <ul>
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+        </ul>
+
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+        </ul>
+
+        <ul>
+            <li><a href = "#">홈</a></li>
+            <li><a href = "#">회원가입</a></li>
+            <li><a href = "#">사이트맵</a></li>
+            <li><a href = "#">오시는길</a></li>
+        </ul>
+    </body>
+</html>

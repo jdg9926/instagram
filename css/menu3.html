@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            div {
+                display: flex;
+            }
+            .hidden1 {
+                visibility: hidden;
+            }
+            a {
+                border: 1px solid black;
+                text-decoration : none;
+                padding: 10px;
+            }
+            a:hover {
+                color: white;
+                background-color: gray;
+            }
+            .one_section {
+                border: 1px solid;
+            }
+            .one_section:hover .hidden1  {
+                visibility: visible;
+            }
+        </style>
+    </head>
+    <body>
+        <section class = "one_section">
+            <div> 
+                <a href = "#">HTML</a>
+                <a href = "#">CSS</a>
+                <a href = "#">JavaScript</a>
+                <a href = "#">JQuery</a>
+                <a href = "#">Jsp</a>
+            </div>
+            <div class = "hidden1">
+                <a href = "#">메뉴1</a>
+                <a href = "#">메뉴2</a>
+                <a href = "#">메뉴3</a>
+            </div>
+        </section>
+    </body>
+</html>

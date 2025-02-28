@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /* 
+                농구공이 23개가 있다.
+                하나의 박스에 4개씩 들어갈수 있다.
+                총 필요한 박스의 개수를 구하세요. 
+            */
+            let ball = 23;
+            let box = 4;
+
+            let box_num  = ball / box;
+            let box_num2  = ball % box ;
+
+            let div = ball % box == 0 ? ball / box : Math.ceil(box_num);
+            document.write(ball, " :: " ,box, " :: ", box_num, " :: " ,div , "<br>");
+            
+            /*
+                사각형의 면적과 둘레 계산하기
+                가로 : 10
+                세로 : 5
+                면적 : 
+                둘레 : 
+            */
+            let width = 10;
+            let height = 5;
+
+            document.write("면적 :: 둘레 : ",width * height,  "::", (width += width) + (height += height), "<br>");
+            /*
+                숫자들의 평균 구하기
+                숫자1 : 80 
+                숫자2 : 95
+                숫자3 : 75
+                총합 : 
+                평균 : 
+            */
+            let num1 = 80;
+            let num2 = 95;
+            let num3 = 75;
+            document.write("sum :: avg : ", num1 + num2 + num3, " : " ,(num1 + num2 +num3) / 3, "<br>");
+            /*
+                하루의 총 시간을 초로 계산하기
+            */
+            let hour = 24;
+            let minute = 60;
+            let second = 60;
+            document.write("하루의 총 시간을 초로 계산하기 = ", hour * minute * second, "<br>");
+
+            /*
+                섭씨 온도를 화씨 온도로 변환하기
+                화씨 = 섭씨 *1.8 + 32;
+                25도를 화씨로 변환하여 출력하세요.
+            */
+            let fire = 25;
+            document.write(fire * 1.8 + 32 , "F <br>");
+
+            /*
+                증감연산자
+                숫자형 데이터를 1씩 증가하거나 감소하는 역할
+                ++, --
+
+                선행 증감 연산자
+                ++변수, --변수
+
+                후행 증감 연산자
+                변수++, 변수--
+            */
+            let n1 = 5;
+            let n2 = ++n1;
+
+            document.write("n2 : ", n2, "<br>");
+            document.write("n1 : ", n1, "<br>");
+
+            let n3 = 5;
+            let n4 = n3++;
+            document.write("n4 : ", n4, "<br>");
+            document.write("n3 : ", n3, "<br>");
+
+            let x = 3, y = 3;
+            let z = x++ + ++y;
+            
+
+            document.write("x : ", x, "<br>");
+            document.write("y : ", y, "<br>");
+            document.write("z : ", z, "<br>");
+
+            document.write("<hr>");
+
+            /*
+                비교연산자
+                두 개의 데이터를 '크다', '작다', '같다' 와 같이 비교할 대 사용
+                연산된 결과는 논리형데이터로 돌려준다.
+            */
+
+            let a = "10", b = 10;
+            let result = a > b;
+            document.write("a > b : ", result, "<br>");
+
+            result = a < b;
+            document.write("a < b : ", result, "<br>");
+            
+            result = a >= b;
+            document.write("a >= b : ", result, "<br>");
+
+            result = a <= b;
+            document.write("a <= b : ", result, "<br>");
+
+            // == 은 데이터 타입 비교 X, === 은 데이터 타입 비교 O
+            result = a == b;
+            document.write("a == b : ", result, "<br>");
+            result = a === b;
+            document.write("a === b : ", result, "<br>");
+
+            // != 은 데이터 타입 비교 X, !== 은 데이터 타입 비교 O
+            result = a != b;
+            document.write("a != b : ", result, "<br>");
+
+            result = a !== b;
+            document.write("a !== b : ", result, "<br>");
+
+            /*
+                논리연산자
+                논리형 데이터 두 개를 가지고 연산
+                || (OR)
+                T || T -> T
+                T || F -> T
+                F || T -> T
+                F || F -> F
+
+                && (AND)
+                T && T -> T
+                T && F -> F
+                F && T -> F
+                F && F -> T
+
+                ! (NOT)
+                !T  -> F
+                !F  -> T
+            */
+
+            x = 10, y = 7;
+            result = x < y && ++x != y;
+            document.write("result : ", result, "<br>");
+            document.write("x : ", x, "<br>");
+            document.write("!result : ", !result, "<br>");
+
+            /*
+                삼항 조건 연산자
+                참일 때 실행할 명령, 거짓일 때 실행할 명령이 있는 연산자
+                참 or 거짓 ? 참일 때 실행할 명령 : 거짓일 때 실행할 명령
+            */
+
+            result = x > y ? "x는 y보다 큽니다." : "x는 y보다 작습니다.";
+            document.write("result : ", result, "<br>");
+
+            x = 9, y = 10;
+            result = x > y ? "x는 y보다 큽니다." : "x는 y보다 작습니다.";
+            document.write("result : ", result, "<br>");
+
+            x = 10, y = 10;
+            result = x == y ? "x는 y보다 큽니다." : "x는 y보다 작습니다.";
+            document.write("result : ", result, "<br>");
+            
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
