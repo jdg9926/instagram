@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /*
+                switch문
+                if문과 비슷하지만 if문은 조건식이 들어가야한다.
+                swtich문은 비교값이 들어간다.
+
+                swtich (비교값) {
+                    case 조건값1 : 비교값과 조건값1이 일치할 때 실행할 명령;
+                        break;
+                    case 조건값2 : 비교값과 조건값1이 일치할 때 실행할 명령;
+                        break;
+                    case 조건값3 : 비교값과 조건값1이 일치할 때 실행할 명령;
+                        break;
+                }
+            */
+            
+            n = 3;
+
+            switch(n) {
+                case 1 : document.write(`1. 게임하기 <br>`);
+                    break;
+                case 2 : document.write(`2. 숨쉬기 <br>`);
+                    break;
+                case 3 : document.write(`3. 눕기 <br>`);
+                    break;
+            }
+            
+            switch(n) {
+                case 1 : document.write(`n = 1 <br>`);
+                    
+                case 2 : document.write(`n = 2 <br>`);
+                    
+                case 3 : document.write(`n = 3 <br>`);
+                    break;
+            }
+
+            switch(n) {
+                case 1 : case 2 : case 3: document.write(`n = 1, 2, 3 <br>`);
+                break;
+            }
+
+            /*
+                break 가 없으면 만나는 모든 명령을 실행하면서 내려간다.
+            */
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

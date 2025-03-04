@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <script>
+        /*
+            제어문 (control-statement)
+            실행문의 순서를 연동
+            조건문 : if, switch
+            반복문 : for, while
+            
+            조건식에 따라 프로그램의 흐름을 제어할 수 있는 문법
+            조건식 : 참인지 거짓인지 판별할 수 있는 식
+            if문
+            if (조건식) {
+                조건식이 참일 때 실행할 명령;
+            }
+        */
+
+        let x = 10;
+        if (x = 10) {
+            document.write("x 는 10입니다.", "<br>");
+        }
+
+        document.write("x : ", x, "<br>");
+
+        /* 
+            변수의 유효범위 (scope)
+            if 문 안의 var 키워드는 코드블럭 안에서 생성해도 밖에서 사용할 수 있다.
+            let, const 키워드는 블록레벨의 유효범위를 가지고 있기 때문에 다른 변수로 인식을 한다.
+
+            지역 변수
+            전역 변수
+        */
+        if (true) {
+            var variable = 1;
+        }
+
+        if (true) {
+            let y = 5; // 지역변수
+        }
+
+        document.write(variable, "<br>");
+        // document.write(y);
+        
+        /*
+            age 변수에 임의의 값으로 초기화 후
+            20세 이상이면 "성인입니다." 라고 콘솔에 출력하기
+        */
+        document.write(`<hr>`);
+
+        let age = 25;
+
+        if (age >= 20) {
+            document.write("성인입니다. <br>");
+        }
+
+        /*
+            if - else
+            참일 때 실행할 명령, 거짓일 때 실행할 명령
+        */
+        let num = 5;
+
+        if (num > 4) {
+            document.write(`${num}는 4보다 큽니다.<br>`);
+            document.write(`${num}는`, " 4보다 큽니다.<br>");
+        } else {
+            document.write(`${num}는 4보다 작습니다. <br>`);
+            document.write(`${num}는`, " 4보다 작습니다. <br>");
+        }
+        /*
+            템플릿 리터럴 - ${변수}
+            표현식의 값을 문자열에 추가하거나 여러줄의 문자열을 표현할 수 있음.
+        */
+        document.write(`<hr>`);
+       let a = 2;
+       let b = 3;
+       document.write(`${a} + ${b} = ${a + b} <br> `);
+
+       let a2 = 7;
+       let b2 = 10;
+
+        if (a2 > b2) {
+            document.write(`a2 = ${a2} 과 b2 = ${b2} 중 큰수는 ${a2} 입니다. <br>`);
+        } else {
+            document.write(`a2 = ${a2} 과 b2 = ${b2} 중 큰수는 ${b2} 입니다. <br>`);
+        }
+
+        /*
+            x개의 농구공을 담기 위한 박스의 개수 구하기
+            필요하다면 Math.cell(사용)
+        */
+        let box = 7;
+        let ball = 53;
+        let result = 0;
+        if (Number.isInteger(ball / box)) {
+            result = ball / box;
+            document.write(`true 필요한 박스의 갯수는 ${result} <br>`);
+        } else {
+            result = Math.ceil(ball / box);
+            document.write(`false 필요한 박스의 갯수는 ${result} <br>`);
+        }
+       
+        /* 
+            if - else if - else 
+            if (조건식1) {
+                조건식1이 참일 때 실행할 문장
+            } else if (조건식2) {
+                조건식1이 거짓이고 조건식2가 참일 때 실행할 문장
+            } else {
+                모든 조건이 맞지 않을 때 실행할 문장
+            }
+
+            효율적인 흐름으로 제어하기 위해 if, else if 조건문의 위치를 잘 생각해야한다.
+        */
+       document.write(`<hr>`);
+
+        let favorite = 7;
+        if (favorite < 5) {
+            document.write(`좋아하는 숫자가 5보다 작습니다. <br>`);
+
+        } else if (favorite > 5) {
+            document.write(`좋아하는 숫자가 5보다 큽니다. <br>`);
+
+        } else {
+            document.write(`좋아하는 숫자는 5입니다. <br>`);
+        }
+
+        
+        // 임의의 나이를 age에 대입하여 if - else if - else 구하기
+
+        let age2 = 25;
+
+        if (age2 >= 20) {
+            document.write(`${age2} 성인입니다. <br>`);
+        }else if (age2 >= 17) {
+            document.write(`${age2} 청소년입니다. <br>`);
+        } else if (age2 >= 6){
+            document.write(`${age2} 어린이입니다. <br>`);
+        } else {
+            document.write(`${age2} 유아입니다. <br>`);
+        }
+
+        document.write(`<hr>`);
+
+        let score = -1;
+        if (score > 100 || score < 0) {
+            document.write(`${score} 는 잘못된 범위입니다. <br>`);
+        }else if (score >= 90) {
+            document.write(`${score} 는 A 입니다. <br>`);
+        } else if (score >= 80) {
+            document.write(`${score} 는 B 입니다. <br>`);
+        } else if (score >= 70) {
+            document.write(`${score} 는 C 입니다. <br>`);
+        } else if (score >= 60) {
+            document.write(`${score} 는 D 입니다. <br>`);
+        } else {
+            document.write(`${score} 는 F 입니다. <br>`);
+        }
+
+        /*
+            if 문의 중첩
+            제어문은 자유롭게 중첩해서 사용할 수 있다.
+
+            if문 안에 if문이 있는 경우
+            if (조건식1) {
+                if (조건식2) {
+
+                }
+            }
+        */
+
+        num = 5;
+
+        if (num <= 10) {
+            if (num % 2 == 1) {
+                document.write(`${num} 은 10보다 작은 홀수입니다. <br>`);
+            }
+        }
+
+    </script>
+    <body>
+        
+    </body>
+</html>
