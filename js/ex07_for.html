@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /*
+                시작값과 종료값 사이에서 참이되는 숫자의 개수가 반복횟수라고 보면 된다.
+
+            */
+            // for (let i = 0; i < 3; i++) {
+            //     document.write(i);
+            // }
+
+            // for (let i = 1; i < 7; i++) {
+            //     document.write(`<h${i}> 자바 스크립트 </h${i}>`);
+            // }
+
+            // for (let i = 0; i < 3; i++) {
+            //     document.write(`<ul><li>안녕</li></ul>`);
+            // }
+
+            document.write(`<hr>`);
+
+            // for (let i = 1; i < 10; i++) {
+            //     var num = 8 * i;
+            //     document.write(`8 x ${i} = ${num}  <br>`);
+            // }
+
+            // 10부터 1까지 출력하기
+            for (let i = 10 ; i > 0 ; i--) {
+                document.write(`${i} <br>`);
+            }
+            document.write(`<hr>`);
+            // 1부터 10까지의 총합
+
+            let num_sum = 0;
+            for (let i = 1; i < 11; i++) {
+                num_sum += i;
+                if (i == 10) {
+                    document.write(`${num_sum} <br>`);
+                }
+            }
+            document.write(`<hr>`);
+            for (let i = 1; i <= 10; i++) {
+                if (i % 2 == 0) {
+                    document.write(`짝수 : ${i} <br>`);
+                }
+            }
+
+            for (let i = 1; i <= 10; i++) {
+                if (i % 3 == 0) {
+                    document.write(`3의 배수 : ${i} <br>`);
+                }
+            }
+            document.write(`<hr>`);
+            /* 방법1 */
+            document.write(" 방법1 <br>");
+            for (let i = 1; i <= 5; i++) {
+                for (let j = 4; j >= i; j--) {
+                    document.write("&nbsp");
+                }
+                for (let j = 1; j <= i; j++) {
+                    document.write("*");
+                }
+                for (let j = 1; j < i; j++) {
+                    document.write("*");
+                }
+                document.write(`<br>`);
+            }
+
+            for (let i = 1; i <= 4; i++) {
+                for (let j = 0; j < i; j++) {
+                    document.write("&nbsp");
+                }
+                for (let j = 4; j >= i; j--) {
+                    document.write("*");
+                }
+                for (let j = 4; j > i; j--) {
+                    document.write("*");
+                }
+                document.write(`<br>`);
+            }
+
+            document.write(`<hr>`);
+
+            /* 방법2 */
+            document.write(" 방법2 <br>");
+            printStars(5);
+            function printStars(n) {
+                for (let i = 1; i <= n; i++) {
+                    for (let j = 0; j < n - i; j++) {
+                        document.write("&nbsp");
+                    }
+                    
+                    for (let j = 0; j < 2 * i - 1; j++) {
+                        document.write("*");
+                    }
+                    
+                    document.write("<br>");
+                }
+    
+                for (let i = n - 1; i >= 1; i--) {
+                    for (let j = 0; j < n - i; j++) {
+                        document.write("&nbsp");
+                    }
+
+                    for (let j = 0; j < 2 * i - 1; j++) {
+                        document.write("*");
+                    }
+                    document.write("<br>");
+                }
+            }
+
+            document.write(`<hr>`);
+
+            /* repeat 함수 사용 */
+            document.write(" 방법3 <br>");
+            printStars(5);
+            function printStars(n) {
+                for (let i = 1; i <= n; i++) {
+                    document.write("&nbsp".repeat(n - i) + "*".repeat(2 * i - 1) + "<br>");
+                }
+                for (let i = n - 1; i >= 1; i--) {
+                    document.write("&nbsp".repeat(n - i) + "*".repeat(2 * i - 1) + "<br>");
+                }
+            }
+
+            
+            document.write(`<hr>`);
+            printStar(10);
+            function printStar(n) {
+                var test = "";
+                for (let i = 0; i < n; i++) {
+                    for (let j = 1+i; j <= n; j++) {
+                        document.write(j, " ");
+                    }
+
+                    for (let j = 1; j <= n; j++) {
+                        if (i == j) {
+                            test += `${j}&nbsp`;
+                            document.write(test);
+                        }
+                    }
+                    document.write("<br>");
+                }
+            }
+                
+            document.write(`<hr>`);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
