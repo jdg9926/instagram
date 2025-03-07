@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /*
+                자바스크립트에서 제공하는 함수
+                별도의 객체 없이 바로 호출해서 사용할 수 있다.
+            */
+
+            /*
+                isFinite()
+                매개변수로 전달된 값이 유효한 수인지 검사하여 결과를 반환한다.
+                유한하면 true 무한이면 false
+            */
+            document.write(isFinite(123) + `<br>`); // true
+            document.write(isFinite(123e100) + `<br>`); // true
+            document.write(isFinite("123") + `<br>`);  // true
+            // 인수로 전달된 값이 숫자가 아니면, 숫자로 변환한다.
+            document.write(isFinite("문자열") + `<br>`); // false
+            document.write(isFinite(undefined) + `<br>`); // false
+            document.write(isFinite(true) + `<br>`); // true
+            document.write(isFinite(null) + `<br>`); // true
+            document.write(isFinite(false) + `<br>`); // true
+
+            /*
+                isNaN()
+                매개변수로 전달된 값이 NaN 인지 검사하여 결과를 반환
+                숫자가 아니면 true, 숫자면 false 
+            */
+            document.write(isNaN(123) + `<br>`); // false
+            document.write(isNaN("123") + `<br>`); // false
+            document.write(isNaN("문자열") + `<br>`); // true
+
+            /*
+                parseFloat()
+                문자열을 읽어서(파싱) 실수(숫자)로 반환     
+            */
+            document.write(parseFloat("123") + `<br>`); // 123
+            document.write(parseFloat("123.000") + `<br>`); // 123
+            document.write(parseFloat("123.456") + `<br>`); // 123.456
+            document.write(parseFloat("123t456") + `<br>`); // 123
+
+            /*
+                parseInt()
+                문자열을 읽어서 정수로 변환     
+            */
+            document.write(parseInt("123") + `<br>`); // 123
+            document.write(parseInt("123.456") + `<br>`); // 123
+            
+            // 두번째 인자로 특정 진법을 전달하면, 해당 진법에 맞는 정수로 반환한다.
+            document.write(parseInt("10", 10) + `<br>`); // 10
+            document.write(parseInt("10", 8) + `<br>`); // 8
+            document.write(parseInt("10", 16) + `<br>`); // 16
+            document.write(parseInt("10", 2) + `<br>`); // 2
+
+            /* 
+                encodeURI()
+                URI에서 주소를 표시하는 특수문자를 제외하고,
+                모든 문자를 이스케이프 시퀀스 처리하여 부호화한다.
+                uri : 주소 + 데이터
+            */
+            let uri = "https://google.com/search.php?name=홍길동&city=서울";
+            let enc1 = encodeURI(uri);
+            document.write(enc1 + "<br>");
+            let enc2 = encodeURIComponent(uri);
+            document.write(enc2 + "<br>");
+
+            /*
+                javascript 에서 제공하는 객체와 메서드
+                Math.
+
+            */
+            // Math.random();  0과 1사이의 난수를 제공
+           
+            let random = Math.random() * 45 + 1;
+            document.write(random + "<br>");
+
+            // Math.floor(); 소수점 내림
+            document.write(Math.floor(random) + "<br>");
+
+            // Math.ceil(); 소수점 올림
+            document.write(Math.ceil(random) + "<br>");
+
+            // Math.round(); 반올림
+            document.write(Math.round(random) + "<br>");
+
+            // Math.max(); 최대값 찾기
+            document.write(Math.max(1,2,3,4,5) + "<br>");
+            
+            // Math.min(); 최소값 찾기
+            document.write(Math.min(1,2,3,4,5) + "<br>");
+
+            // Math.pow(); 거듭 제곱
+            document.write(Math.pow(2, 3) + "<br>");
+
+            // Math.sqrt(); 제곱근을 계산
+            document.write(Math.sqrt(9) + "<br>");
+
+            // Math.abs(); 절대값을 구함
+            document.write(Math.abs(-5) + "<br>");
+
+            /*
+                문자열 관련 메서드
+            */
+
+            document.write(`<hr>`);
+
+            // indexOf(); 문자열 내에서 지정한 문자열의 첫 번째 인덱스를 반환
+            let str = "hello, world";
+            document.write(str.indexOf("world") + "<br>"); // 7
+            
+            // lastIndexOf() - 문자열 내에서 지정한 문자열의 마지막 인덱스값을 반환
+            document.write(str.lastIndexOf("l") + "<br>"); // 10
+
+            // includes() 문자열에 특정 부분 문자열이 포함되어 있으면 'true' 없으면 'false'
+            document.write(str.includes("hello") + "<br>"); // true
+            
+            // startsWith() 문자열이 지정한 문자열로 시작하는지 확인
+            document.write(str.startsWith("hell") + "<br>"); // true
+
+            // slice() 문자열의 일부를 잘라내어 새로운 문자열로 반환
+            document.write(str.slice(7, 12) + "<br>"); // world
+
+            // replace() 문자열의 일부 내용을 새로운 문자열로 치환하여 결과를 반환
+            document.write(str.replace("world", "JavaScript") + "<br>"); // hello, JavaScript
+
+            // concat() 하나 이상의 문자열을 연결하여 새로운 문자열을 만듬
+            let str1 = "hello";
+            let str2 = "world";
+            document.write(str1.concat(", ", str2) + "<br>"); // hello, world
+
+            // trim() 문자열 양 끝의 공백을 제거한 새로운 문자열을 반환
+            let strWithSpace = "   hello,    world     ";
+            document.write(strWithSpace.trim() + "<br>"); // hello, world
+           
+            let quiz = "n i c e t o m e e t y o u"; // 일때 공백 제거
+            document.write(quiz.replaceAll(" ", "") + "<br>"); // nicetomeetyou
+
+            let cArr = quiz.trim().split(' ');
+            document.write(cArr + "<br>"); // n,i,c,e,t,o,m,e,e,t,y,o,u
+            
+            let answer = "";
+            for (let s of cArr) {
+                answer += s;
+            }
+            document.write("for문 ::" + answer + "<br>"); // nicetomeetyou
+
+            // split() 문자열을 지정한 구분자로 나눠서 배열로 반환
+            str = "apple, banana, cherry";
+            document.write(str.split(",") + "<br>"); // apple, banana, cherry
+
+            // charAt() 지정한 인덱스의 문자를 반환한다.
+            document.write(str.charAt(0) + "<br>"); // a
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            /*
+                함수(function)
+                자주 사용하는 명령들을 하나로 모아 재사용할 수 있게 만들어놓은것
+                function 함수명 () {
+                    자주 사용하는 명령
+                    return 반환값;
+                }
+            */
+
+            // 함수의 선언
+            function square (n) {
+                // 제곱하기 기능
+                let result = n * n;
+                return result;
+            }
+            // 함수의 호출
+            document.write(`function square :: ${square(3)} <br>`);
+            document.write(`function square :: ${square(4)} <br>`);
+            document.write(`function square :: ${square(5)} <br>`);
+
+            /*
+                매개변수
+                외부에서 값을 받아야 하는 경우 만드는 변수
+                필요없으면 안쓸수도 있고, 여러개가 필요하면
+                쉼표를 구분으로 여러개를 쓸 수도 있다.
+            */
+            function sum (n1, n2) {
+                let result = n1 + n2;
+                return result;
+            }
+            document.write(`function sum :: ${sum(10,7)} <br>`)
+
+            // 매개변수는 있지만 반환값이 없는 함수
+            function multi (x, y) {
+                let result = x * y;
+                document.write(`multi :: ${result} <br>`);
+            }
+            multi(10,7);
+
+            // 매개변수가 없고 반환값도 없는 함수
+            function f () {
+                alert('함수호출');
+            }
+            // f();
+            function sayHello () {
+                return "안녕하세요!";
+            } 
+            document.write(`${sayHello()}`);
+
+            /* 
+                매개변수의 여부는 외부에서 값을 전달받아야 하는 경우로 결정
+                반환값의 여부는 함수 밖으로 보내야 할지 말아야 할지 경우로 결정
+            */
+            
+
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            let func1 = () => {
+                
+                let x = document.querySelector('#number');
+                let n_div = document.querySelector('#n_div');
+                
+                // let number = x.textContent;
+
+                // if (n_div. != "") {
+                //     return;
+                // }
+
+                if (number <= 1 || number >= 10) {
+                    if (number == "") {
+                        return alert(`숫자를 입력하지 않았습니다. 값을 입력해주세요.`);
+                    } else {
+                        return alert(`${number} 입니다. 2~9 사이의 값을 입력해주세요.`);
+                    }
+                }
+
+                for (let i = 1; i < 10; i++) {
+                    n_div.innerHTML += `${number} X ${i} =  ${number * i} <br>`;
+                }
+            }
+
+            let func2 = () => {
+                let n_div = document.querySelector('#n_div');
+                let btn_hide = document.querySelector('#btn_hide');
+                let btn_hide_text = btn_hide.textContent;
+
+                let x = document.querySelector('#number');
+                let number = x.value;
+                if (btn_hide_text == "보이기") {
+                    for (let i = 1; i < 10; i++) {
+                        n_div.innerHTML += `${number} X ${i} =  ${number * i} <br>`;
+                    }
+                    btn_hide.textContent = "숨기기";
+                } else {
+                    
+                    n_div.innerHTML = "";
+                    btn_hide.textContent = "보이기";
+                }
+
+                // if (btn_hide_text == "숨기기") {
+                //     n_div.addEventListener("visibilitychange", btn_hide_text);
+                // } else {
+
+                // }
+                 
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <!-- 
+            input에 단을 입력하고 계산 시작 누르면
+            아래 구구단 나오게 하기 
+            만약 input에 값이 입력이 안되었다면
+            "값을 입력해주세요"
+            만약 input에 1이하 또는 10 이상이 입력되었다면
+            "2~9 사이의 값을 입력해주세요"
+
+            숨기기버튼 누르면 아래 출력된 구구단 숨기면서
+            버튼에 쓰여진 value를 "보이기로" 바꾸기
+        -->
+
+        <input type = "number" id = "number">
+        <button id = "btn_start" onclick = "func1()">계산시작</button>
+        <!--  -->
+        <button id = "btn_hide" onclick = "func2()">숨기기</button> 
+        <!-- 계산 내용 안보이게 -->
+
+        <div id = "n_div">
+        </div>
+    </body>
+</html>
