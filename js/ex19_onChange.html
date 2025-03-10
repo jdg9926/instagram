@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <script>
+        /*
+            onChange
+            입력상자에 값을 입력한 후 포커스를 잃었을 때 이벤트가 발생된다.
+        */
+        let handleChange = () => {
+            let value = document.querySelector('#inptBox').value;
+            document.querySelector('#result').textContent = "입력된 값 : " + value;
+        }
+
+        let oninputBox = () => {
+            let value = document.querySelector('#oninputBox').value;
+            document.querySelector('#result2').textContent = "입력된 값 : " + value;
+        }
+
+        let handleMoiseOver = () => {
+            document.querySelector('#hoverResult').textContent = "마우스가 요소 위에 있습니다."
+        }
+        let handleMouseOut = () => {
+            document.querySelector('#hoverResult').textContent = "마우스가 요소를 벗어났습니다."
+        }
+        let handleondblclick = () => {
+            document.querySelector('#dbClickResult').textContent = "더블클릭";
+        }
+    </script>
+
+    <body>
+        <h2>onChange 예제</h2>
+        <p>입력 상자에 값을 입력한 후 포커스를 다른쪽으로 이동하면 onchange 이벤트 발생</p>
+        <input id = "inptBox" onchange = "handleChange()" placeholder = "여기에 입력하세요." >
+        <div id = result></div>
+        
+        <hr>
+
+        <h2>oninput 예제</h2>
+        <p>입력 상자에 값을 입력한 후 포커스를 다른쪽으로 이동하면 onchange 이벤트 발생</p>
+        <input id = "oninputBox" oninput = "oninputBox()" placeholder = "여기에 입력하세요.">
+        <div id = result2></div>
+
+        <hr>
+
+        <h2>마우스 오버 / 아웃 이벤트</h2>
+        <div onmouseover = "handleMoiseOver()" onmouseout = "handleMouseOut()">
+        <p id = "hoverResult" style="width: 300px; height: 300px; background-color: white;"></p>
+
+        <h2>더블클릭 이벤트</h2>
+        <button ondblclick = "handleondblclick()">더블클릭 해보세요</button>
+        <p id = "dbClickResult"></p>
+    </body>
+</html>

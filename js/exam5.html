@@ -4,80 +4,93 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <script src = "../common/common.js"></script>
         <script>
-            let func1 = () => {
-                
-                let x = document.querySelector('#number');
-                let n_div = document.querySelector('#n_div');
-                
-                // let number = x.textContent;
+            // 계산시작 및 숨기기 보이기
+            let func1 = x => {
+                if (x == 1) {
+                    let inpt_num = document.querySelector('#number');
+                    let number = inpt_num.value;
 
-                // if (n_div. != "") {
-                //     return;
-                // }
-
-                if (number <= 1 || number >= 10) {
-                    if (number == "") {
-                        return alert(`숫자를 입력하지 않았습니다. 값을 입력해주세요.`);
-                    } else {
-                        return alert(`${number} 입니다. 2~9 사이의 값을 입력해주세요.`);
+                    // input null 및 타입 체크
+                    if (gfn_null(number) || !gfn_num_check(number)) {
+                        return alert("올바른 값을 입력하지 않았습니다.");
                     }
-                }
 
-                for (let i = 1; i < 10; i++) {
-                    n_div.innerHTML += `${number} X ${i} =  ${number * i} <br>`;
-                }
-            }
-
-            let func2 = () => {
-                let n_div = document.querySelector('#n_div');
-                let btn_hide = document.querySelector('#btn_hide');
-                let btn_hide_text = btn_hide.textContent;
-
-                let x = document.querySelector('#number');
-                let number = x.value;
-                if (btn_hide_text == "보이기") {
-                    for (let i = 1; i < 10; i++) {
-                        n_div.innerHTML += `${number} X ${i} =  ${number * i} <br>`;
+                    if (number < 2 || number > 9) {
+                        return alert("2 ~ 9 사이의 값을 입력해주세요.")
                     }
-                    btn_hide.textContent = "숨기기";
-                } else {
                     
-                    n_div.innerHTML = "";
-                    btn_hide.textContent = "보이기";
+                    let n_div = document.querySelector('#n_div');
+                    let div_main = "";
+                    for (let i = 1; i <= 9; i++) {
+                        div_main += `${number} X ${i} = ${number * i} <br>`
+                    }
+                    n_div.innerHTML = div_main;
+                } else {
+                    let btn_hide = document.querySelector('#btn_hide');
+                    let n_div = document.querySelector('#n_div');
+                    btn_hide_text = btn_hide.textContent;
+                    if (btn_hide_text == "숨기기") {
+                        console.log("숨기기");
+                        n_div.setAttribute("style", "visibility: hidden");
+                        btn_hide.textContent = "보이기";
+                    } else {
+                        console.log("보이기");
+                        n_div.setAttribute("style", "visibility: visible");
+                        btn_hide.textContent = "숨기기";
+                    }
                 }
-
-                // if (btn_hide_text == "숨기기") {
-                //     n_div.addEventListener("visibilitychange", btn_hide_text);
-                // } else {
-
-                // }
-                 
-
             }
+            // 계산기
+            let func2 = (x) => {
+                let inpt_sum1 = document.querySelector('#inpt_sum1');
+                let inpt_sum2 = document.querySelector('#inpt_sum2');
 
+                let su = inpt_sum1.value;
+                let su2 = inpt_sum2.value;
+ 
+                let inpt_num = document.querySelector('#res_dt');
+                let num_var = x;
+                inpt_num.setAttribute("value", eval(`${su}${num_var}${su2}`));
+            }
+            
         </script>
+        <style>
+
+        </style>
     </head>
     <body>
-        <!-- 
-            input에 단을 입력하고 계산 시작 누르면
-            아래 구구단 나오게 하기 
-            만약 input에 값이 입력이 안되었다면
-            "값을 입력해주세요"
-            만약 input에 1이하 또는 10 이상이 입력되었다면
-            "2~9 사이의 값을 입력해주세요"
+        <input id = "number" maxlength = "2">
+        <button id = "btn_start" onclick = "func1(1)">계산시작</button>
+        <button id = "btn_hide"  onclick = "func1(2)">숨기기</button>
 
-            숨기기버튼 누르면 아래 출력된 구구단 숨기면서
-            버튼에 쓰여진 value를 "보이기로" 바꾸기
-        -->
+        <div id = "n_div"></div>
 
-        <input type = "number" id = "number">
-        <button id = "btn_start" onclick = "func1()">계산시작</button>
-        <!--  -->
-        <button id = "btn_hide" onclick = "func2()">숨기기</button> 
-        <!-- 계산 내용 안보이게 -->
-
-        <div id = "n_div">
-        </div>
+        <hr>
+        <!-- 계산기 만들기 -->
+        <table border = "1px">
+            <tr>
+                <td style = "width: 50px;">수1</td>
+                <td style = "width: 200px;"><input id = "inpt_sum1"></td>
+            </tr>
+            <tr>
+                <td>수2</td>
+                <td><input id = "inpt_sum2"></td>
+            </tr>
+            <tr>
+                <td colspan = "2" style = "height: 50px; text-align: center;">
+                    <button onclick = "func2('+')">+</button>
+                    <button onclick = "func2('-')">-</button>
+                    <button onclick = "func2('*')">*</button>
+                    <button onclick = "func2('/')">/</button>
+                </td>
+            </tr>
+            <tr>
+                <td>결과</td>
+                <td><input id = "res_dt"></td>
+            </tr>
+            
+        </table>
     </body>
 </html>
