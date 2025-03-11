@@ -53,3 +53,20 @@ let gfn_AllTrim = x => {
     }
     return rtnValue;
 }
+// 그리드 템플릿 생성
+let grid_template = (id, rows, cols) => {
+    if (id == "div") {
+
+    } else if(id == "") {
+
+    }
+    // rows 와 cols 의 데이터가 배열이 아닌경우 배열로 만들어줘야함.
+    // 이후 DB 에서 데이터 받아와서 데이터의 배열에 따라 수정해야함.
+
+    let gird_id = document.querySelector(`${id}`);
+    let gridData = {
+          rowsData : rows
+        , colsData : cols
+    }
+    new agGrid.createGrid(gird_id, gridData);    
+}

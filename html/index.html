@@ -1,100 +1,93 @@
-<!-- 주석(comment) : 브라우저에서 출력이 되지 않는 설명 문장 코드에 대한 설명을 할 때 사용한다. 영역 안에 있으면 전부 주석으로 간주한다. -->
-<!DOCTYPE html> <!-- HTML5 문서임을 선언, 대소문자 구분 없이 정의 가능하다. -->
-<html lang = "ko"> <!-- 루트 요소 -->
-    <head> <!-- HTML의 meta 정보를 포함한다. -->
+<!-- 주석(comment) : 브라우저에서 출력이 되지 않는 문장
+ 소스코드에 대한 설명을 할 때 사용 -->
+<!DOCTYPE html> <!-- HTML5 문서임을 선언, 대소문자 구분없이 정의가능 -->
+<html lang="en"> <!-- 루트 요소 -->
+    <head> <!-- HTML의 meta정보를 포함한다.  -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> 제목 </title> <!-- HTML 페이지의 제목, 브라우저 상단의 웹 페이지 탭에 제목으로 노출된다. -->
-        <link rel = "stylesheet" href = "style.css">
-        <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-        
-        <!-- <style>
-            @import url(style.css);
-        </style> -->
+        <title>제목입니다.</title> <!-- HTML 페이지의 제목, 브라우저 상단의 웹페이지 탭에 제목으로 노출  -->
+        <!-- relationship: 연결하려는 파일과의 관계 -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="script.js"></script>
     </head>
-    <body>
-        <!-- HTML 문서에서 실질적으로 보이는 영역을 정의하는 구간 - 이미지, 글, 링크, 테이블, 동영상 등등 -->
-        <!-- 코드 작성시 엔터를 눌러 줄바꿈을 시도했음에도 불구하고 실행 화면에는 한줄로 연결된 채 나온다. -->
-
-        <!-- HTML 용어 및 정의 -->
-        <!-- <br> - 줄바꿈 담당 태그 -->
-        <!-- <p> ... </p> - 단락을 정의하는 태그 * block 속성을 가지고 있다. -->
-        <!-- <h1> ... </h1> - 제목, 부제목, 소제목을 작성할 때 사용하는 태그 <h6> 까지 있다. -->
-        <!-- <strong> ... </strong> - 글씨를 두껍게 만들어 강조하는 역할 -->
-        <!-- <b> ... </b> - 글씨를 두껍게 만드는 역할 -->
-        <!-- <button> ... </button> - 버튼을 만드는 태그 -->
-        <!-- <a href = "url"> ... </a> - 다른 페이지로 이동할 수 있는 태그 -->
-        <!-- <img src = "url"> - 이미지를 불러와 문서에서 보여주는 태그 -->
-
-        <!-- 상단바 -->
-        <div id = "high_bar"> 
-            <img src = "image/instagramlogo.png" width="150px">
-            <input type = "search" value = "검색">
+    <body><!-- HTML문서에서 실질적으로 보이는 영역을 정의하는 구간 이미지, 글, 링크, 테이블, 동영상 등등 -->
+        <!-- 코드 작성시 엔터를 눌러 줄바꿈을 시도했음에도 불구하고 실행화면에는 한줄로 연결된 채 나온다. -->
+         <div id="top">
+            <img src="image/instagramlogo.png">
+            <input value="검색">
             <div>
-                <i class = "fa-solid fa-house"></i>
-                <i class = "fa-solid fa-paper-plane"></i>
-                <i class = "fa-solid fa-compass"></i>
-                <i class = "fa-solid fa-heart"></i>
+                <i class="fa-solid fa-house"></i>
+                <i class="fa-solid fa-paper-plane"></i>
+                <i class="fa-solid fa-compass"></i>
+                <i class="fa-solid fa-heart"></i>
             </div>
-        </div>
-        <!-- 프로필 영역 -->
-        
-        <div id = "profile">
-            <div id = "profile_pic">
-                <img src = "image/profile.jpg" class = "circle_pic">
+         </div>
+
+         <div id="profile">
+            <div id="profile_pic">
+                <img src="image/profile.jpg" class="circle_pic">
             </div>
-            <div id = "profile_info">
-                <div id = "id"> half_bottle<i class="fa-solid fa-gear"></i></div>
-                <button> 프로필 편집 </button>
+
+            <div id="profile_info">
+                <div id="id">
+                    <span>half_bottle</span>
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <button>프로필 편집</button>
             </div>
         </div>
 
-        <!-- 소개글 -->
         <div>
             <p>
-                <strong>
-                    반병현(Bynghyun Ban) <br>
+                <strong id = "userInfo">
+                    반병현(Bynghyun Ban)<br>
                 </strong>
-                작가
+                <a id = "summary">작가</a><br>
             </p>
-            <p>
-                <a href = "https://needleworm.github.io "> needleworm.github.io </a>
+            <p id = "profileDetail"> 
+                <a href="https://needleworm.github.io" id = "profileDetail">needleworm.github.io</a>
             </p>
         </div>
-        <!-- 하이라이트 -->
-        <div class = "high_light">
-            <div class = "high_light_sub">
-                <div class = "highlight_pic">
-                    <img src="image/h1.jpg" class = "circle_pic">
+        
+        <div id="highlight_area">
+            <div class="highlight">
+                <div class="highlight_pic">
+                    <img src="image/h1.jpg" class="circle_pic">
                 </div>
                 <div>
                     😘
                 </div>
             </div>
-            <div class = "high_light_sub">
-                <div class = "highlight_pic">
-                    <img src="image/h2.jpg" class = "circle_pic">
+            <div class="highlight">
+                <div class="highlight_pic">
+                    <img src="image/h2.jpg" class="circle_pic">
                 </div>
                 <div>
-                    😎
+                    😘
                 </div>
             </div>
+            <div></div>
         </div>
-        <!-- 상태표시줄 -->
-        <div id = "status_Bar">
-            <div class = "stat">
-                게시물 <br> 133
+
+        <div id="stat_bar">
+            <div class="stat">
+                게시물<br>
+                133
             </div>
-            <div class = "stat">
-                팔로워 <br> 408
+            <div class="stat">
+                팔로워<br>
+                408
             </div>
-            <div class = "stat">
-                팔로우 <br> 189
+            <div class="stat">
+                팔로우<br>
+                189
             </div>
         </div>
-        <!-- 아이콘 -->
-        <div id = "main_icon">
-            <div class = "selected">
+
+        <!-- 아이콘이 들어갈 자리 -->
+        <div id="sub_icons">
+            <div class="selected">
                 <i class="fa-solid fa-border-all"></i>
             </div>
             <div>
@@ -103,24 +96,30 @@
             <div>
                 <i class="fa-solid fa-circle-play"></i>
             </div>
-            <div>    
+            <div>
                 <i class="fa-solid fa-bookmark"></i>
             </div>
             <div>
                 <i class="fa-solid fa-user-tag"></i>
             </div>
         </div>
-        <!-- 게시물 썸네일 -->
-            <div id = "thumb_nail_grid">
-                <img src = "image/2.jpg" class = "thumb_nail">
-                <img src = "image/1.jpg" class = "thumb_nail">
-                <img src = "image/3.jpg" class = "thumb_nail">
-                <img src = "image/4.jpg" class = "thumb_nail">
-                <img src = "image/5.jpg" class = "thumb_nail">
-                <img src = "image/6.jpg" class = "thumb_nail">
-                <img src = "image/7.jpg" class = "thumb_nail">
-                <img src = "image/8.jpg" class = "thumb_nail">
-                <img src = "image/9.jpg" class = "thumb_nail">
+
+        <div>
+            <div class="thumbnail_grid">
+                <img src="image/1.jpg" class="thumbnail">
+                <img src="image/2.jpg" class="thumbnail">
+                <img src="image/3.jpg" class="thumbnail">
             </div>
+            <div class="thumbnail_grid">
+                <img src="image/4.jpg" class="thumbnail">
+                <img src="image/5.jpg" class="thumbnail">
+                <img src="image/6.jpg" class="thumbnail">
+            </div>
+            <div class="thumbnail_grid">
+                <img src="image/7.jpg" class="thumbnail">
+                <img src="image/8.jpg" class="thumbnail">
+                <img src="image/9.jpg" class="thumbnail">
+            </div>
+        </div>
     </body>
 </html>

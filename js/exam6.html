@@ -1,39 +1,50 @@
 <!DOCTYPE html>
-<html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <script>
-        let num = 0;
-        func1 = (x)=> {
-            if (x == "right") {
-                if (num == 7) {
-                    num = 0;
-                }                
-                let img_main = document.querySelector('#img_main');
-                img_main.setAttribute("src" , `../css/image/img${num}.jpg`);
 
-                num++;
-            } else {
-                if (num <= 0) {
-                    num = 7;
-                }
-                let img_main = document.querySelector('#img_main');
-                img_main.setAttribute("src" , `../css/image/img${num}.jpg`);
-                num--;
+        let num = 1;
+        let path = "../css/image/img";
+
+        function prev(){
+            num--;
+            if(num < 1){
+                num = 7;
             }
+            //img태그의 src에 들어있는 경로를 수정
+            let prev_img = document.querySelector("#gallery");
+            prev_img.src = `${path+num}.jpg`
         }
 
-        // setInterval("next()", 1000)
-        // 각 흐름 사이의 고정된 시간으로 함수를 반복적으로 호출할 수 있다.
+        function next(){
+            num++;
+
+            if(num > 7){
+                num = 1;
+            }
+
+            let next_image = document.querySelector("#gallery");
+            next_image.src=`${path+num}.jpg`
+        }
+
+        setInterval("next()",1000);
+        //각 호출 사이에 고정된 시간으로 함수를 반복적으로 호출할 수 있다.
+        //1000ms가 1초이다.
     </script>
-    <body>
-        <div>
-            <img src = "../css/image/left_btn.png" onclick = "func1('left')">
-            <img id = "img_main" src = "../css/image/img1.jpg" width="500px" height="300px">
-            <img src = "../css/image/right_btn.png" onclick = "func1('right')">
-        </div>
-    </body>
+</head>
+<body>
+    <div id="galleryWrap">
+        <a href="#" onclick="prev()">
+            <img alt="이전" src="../css/image/left_btn.png">
+        </a>
+        <img alt="갤러리" id="gallery" src="../css/image/img6.jpg" width="300" height="200">
+
+        <a href="#" onclick="next()">
+            <img alt="다음" src="../css/image/right_btn.png">
+        </a>
+    </div>
+</body>
 </html>

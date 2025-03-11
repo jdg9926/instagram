@@ -1,20 +1,41 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <script src = "../common/common.js"></script>
-        <script>
-            function test () {
-                let a = "5";
-                console.log("a ::" + a);
-                let test = gfn_num_check(a);
-                console.log(test);
-            }
-        </script>
-    </head>
-    <body>
-        <button onclick="test()">test</button>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AG Grid 기본 설정</title>
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.noStyle.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/styles/ag-grid.css">
+    <link rel="stylesheet" href="https://unpkg.com/ag-grid-community/styles/ag-theme-alpine.css">
+    <style>
+        #myGrid {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>AG Grid 기본 예제</h2>
+    <div id="myGrid" class="ag-theme-alpine"></div>
+
+    <script>
+        let columnData = [
+            { field: "make", headerName: "제조사" },
+            { field: "model", headerName: "모델" },
+            { field: "price", headerName: "가격"}
+        ];
+
+        let rowData = [
+
+        ];
+
+        const gridOptions = {
+            columnDefs: columnData,
+            rowData: rowData
+        };
+
+        const gridDiv = document.querySelector("#myGrid");
+        new agGrid.createGrid(gridDiv, gridOptions);
+    </script>
+</body>
 </html>
