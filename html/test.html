@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            let total = 0;
+            function test (x, y) {
+                let result = "";
+                for (let i = 1; i <= x; i++) {
+                    for (let j = 1; j <= y; j++) {
+                        if (i % 2 == 1) {
+                            document.writeln(`${j + ((i - 1) * x)}`);
+                        } else {
+                            let number = [];    
+                            number.push(j + (i * y) - y);
+                            let test = [...number].reverse();
+
+                            document.writeln(number.reverse());
+                        }
+                    }
+                    document.writeln("<br>");
+                }
+            }
+
+            // let x = 5;
+            // let y = 5;
+            // for (let i = 1; i <= x; i++) {
+            //     for (let j = 1; j <= y; j++) {
+            //         if (i % 2 == 1) {
+            //             document.writeln(`${j + ((i - 1) * 5)}`);
+            //         } else {
+            //             let number = [];
+            //             number.push(j + (i * 5) - 5);
+            //             document.writeln(`${(y - j + 1) + ((i - 1) * 5)}`);
+            //         }
+            //     }
+            //     document.writeln("<br>");
+            // }
+
+
+        </script>
+    </head>
+    <body>
+        <button onclick = "test(5,5)"> test</button>
+    </body>
+</html>
